@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Registro de asitencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label class="ion-padding-top ion-text-center">
+    <h1>
+      Instrucciones para registrar asistencia
+    </h1>
+  </ion-label>
+  <ion-label class="ion-padding-top ion-text-center">
+    <p>
+      Escanee el codigo QR que aparece en el proyector de la sala para registrar su asistencia para la clase
+    </p>
+  </ion-label>
+  <ion-row class="ion-padding-top ion-text-center">
+    <ion-col size="12">
+
+
+<ion-button [routerLink]="['/camara']">Escaner codigo QR</ion-button>
+
+    </ion-col>
+  </ion-row>
+
+
+      <div class="ion-padding-top ion-text-center">
+      <img src='assets/icon/2.jpg' style='width: 25% ; border: 2px solid rgb(255, 255, 255)'>
+      </div>
+      <div class="ion-padding-top ion-text-center">
+        <ion-button [routerLink]="['/login']">Volver</ion-button>
+      </div>
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-left ion-text">
+      Identificacion de ususario
+    </ion-title>
+
+  </ion-toolbar>
+</ion-footer>
