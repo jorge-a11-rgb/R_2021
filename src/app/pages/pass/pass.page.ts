@@ -6,6 +6,15 @@ import { Router, NavigationExtras } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
 import { Usuario_pass } from 'src/app/model/Usuario_pass';
+import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { $ } from 'protractor';
+import { Usuario } from 'src/app/model/Usuario';
+
+import { createAnimation } from '@ionic/angular';
+import { Animation, AnimationController } from '@ionic/angular';
+
 @Component({
   selector: 'app-pass',
   templateUrl: './pass.page.html',

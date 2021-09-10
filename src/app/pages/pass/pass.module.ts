@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PassPageRoutingModule } from './pass-routing.module';
 
 import { PassPage } from './pass.page';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PassPageRoutingModule
+    PassPageRoutingModule,
+    MatSliderModule
   ],
   declarations: [PassPage]
 })

@@ -5,6 +5,18 @@ import { Router, NavigationExtras } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Usuario } from 'src/app/model/Usuario';
 
+import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { $ } from 'protractor';
+
+
+
+import { createAnimation } from '@ionic/angular';
+import { Animation, AnimationController } from '@ionic/angular';
+
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
