@@ -21,6 +21,8 @@ import { Animation, AnimationController } from '@ionic/angular';
 export class HomePage implements OnInit, AfterViewInit {
 
   @ViewChild('titulo', { read: ElementRef, static: true}) titulo: ElementRef;
+  @ViewChild('titulo2', { read: ElementRef, static: true}) titulo2: ElementRef;
+
 
 
    constructor(
@@ -29,6 +31,7 @@ export class HomePage implements OnInit, AfterViewInit {
   public ngAfterViewInit(): void {
     let animation = this.animationController.create()
       .addElement(this.titulo.nativeElement)
+      .addElement(this.titulo2.nativeElement)
       .duration(1500)
       .iterations(Infinity)
       .fromTo('transform', 'translate(0px)', 'translate(100px)')

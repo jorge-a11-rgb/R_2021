@@ -22,17 +22,35 @@ import { Animation, AnimationController } from '@ionic/angular';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit, AfterViewInit {
+  @ViewChild('titulo', { read: ElementRef, static: true}) titulo: ElementRef;
+  @ViewChild('titulo2', { read: ElementRef, static: true}) titulo2: ElementRef;
 
 
   public usuario: Usuario;
 
-  constructor(private router: Router, private toastController: ToastController) {
+  constructor(private router: Router, private toastController: ToastController, private activeroute: ActivatedRoute
+    , private alertController: AlertController
+    , private animationController: AnimationController) {
     this.usuario = new Usuario();
     this.usuario.nombreUsuario = '';
     this.usuario.password = '';
   }
+  public ngAfterViewInit(): void {
+    // eslint-disable-next-line prefer-const
+    let animation = this.animationController.create()
+      .addElement(this.titulo.nativeElement)
+      .addElement(this.titulo2.nativeElement)
 
+      .duration(1500)
+      .fromTo('transform', 'translate(0px)', 'translate(100px)')
+      .fromTo('opacity', 0.10, 1);
+
+      document.querySelector('#limpiar1').addEventListener('click', () => {
+        animation.play();
+      });
+
+  }
   public ngOnInit(): void {
 
   }
@@ -80,5 +98,10 @@ export class LoginPage implements OnInit {
       });
     toast.present();
   }
+  public limpiarFormulario(): void{
+    for (const [key, value] of Object.entries(this.usuario)) {
+      Object.defineProperty(this.usuario, key, {value: ''});
+  }
 
+}
 }

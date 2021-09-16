@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Reevalidacion de constraseña</ion-title>
+    <ion-title>Revalidación de contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -23,13 +23,13 @@
       </div>
 
       <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Ingrese contraseña</ion-label>
+        <ion-item >
+          <ion-label position="floating"  #titulo4>Ingrese contraseña</ion-label>
 
           <ion-input type="password" [(ngModel)]="usuario.password1"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label position="floating" >Repita contraseña</ion-label>
+        <ion-item >
+          <ion-label position="floating" #titulo5>Repita contraseña</ion-label>
 
           <ion-input type="password" [(ngModel)]="usuario.password2"></ion-input>
         </ion-item>
@@ -38,13 +38,19 @@
 
             <ion-button shape="block" (click)="ingresar()">Restablecer</ion-button>
           </ion-col>
+          <ion-col size="12">
+            <ion-button shape="block" (click)="limpiarFormulario()" id="limpiar3">
+              Limpiar
+            </ion-button>
+
+          </ion-col>
         </ion-row>
       </ion-card-content>
 
      </ion-card>
   </div>
   <div class="ion-padding-top ion-text-center">
-    <ion-button [routerLink]="['/pass']">Volver</ion-button>
+    <ion-button [routerLink]="['/pass']" id="volver">Volver</ion-button>
   </div>
 
 
@@ -54,7 +60,7 @@
 <ion-footer>
   <ion-toolbar color="primary">
     <ion-title class="ion-text-left ion-text">
-      Identificacion de ususario
+      Identificación de usuario
     </ion-title>
 
   </ion-toolbar>

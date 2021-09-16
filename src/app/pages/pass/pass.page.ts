@@ -20,14 +20,32 @@ import { Animation, AnimationController } from '@ionic/angular';
   templateUrl: './pass.page.html',
   styleUrls: ['./pass.page.scss'],
 })
-export class PassPage implements OnInit {
+export class PassPage implements OnInit, AfterViewInit {
+  @ViewChild('titulo3', { read: ElementRef, static: true}) titulo3: ElementRef;
+
+
 
   public usuario: Usuario_pass;
 
-  constructor(private router: Router, private toastController: ToastController) {
+  constructor(private router: Router, private toastController: ToastController, private activeroute: ActivatedRoute
+    , private alertController: AlertController
+    , private animationController: AnimationController) {
     this.usuario = new Usuario_pass();
     this.usuario.nombreUsuario = '';
 
+  }
+  public ngAfterViewInit(): void {
+    // eslint-disable-next-line prefer-const
+    let animation = this.animationController.create()
+      .addElement(this.titulo3.nativeElement)
+
+      .duration(1500)
+      .fromTo('transform', 'translate(0px)', 'translate(100px)')
+      .fromTo('opacity', 0.10, 1);
+
+      document.querySelector('#limpiar2').addEventListener('click', () => {
+        animation.play();
+      });
   }
 
   public ngOnInit(): void {
@@ -78,5 +96,11 @@ export class PassPage implements OnInit {
       });
     toast.present();
   }
+  public limpiarFormulario(): void{
+    for (const [key, value] of Object.entries(this.usuario)) {
+      Object.defineProperty(this.usuario, key, {value: ''});
+  }
+
+}
 
 }
