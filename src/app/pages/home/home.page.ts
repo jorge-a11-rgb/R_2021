@@ -7,7 +7,7 @@ import { $ } from 'protractor';
 
 import { createAnimation } from '@ionic/angular';
 import { Animation, AnimationController } from '@ionic/angular';
-
+import { Usuario } from 'src/app/model/Usuario';
 
 
 
@@ -19,6 +19,7 @@ import { Animation, AnimationController } from '@ionic/angular';
 })
 
 export class HomePage implements OnInit, AfterViewInit {
+  [x: string]: any;
 
   @ViewChild('titulo', { read: ElementRef, static: true}) titulo: ElementRef;
   @ViewChild('titulo2', { read: ElementRef, static: true}) titulo2: ElementRef;
@@ -26,7 +27,14 @@ export class HomePage implements OnInit, AfterViewInit {
 
 
    constructor(
-        private animationController: AnimationController) {}
+        private animationController: AnimationController
+        ,private router: Router
+        ,private activateroute: ActivatedRoute
+        ,private alterControler: AlertController) {
+          if (this.router.getCurrentNavigation().extras.state) {
+            this.usuario = this.router.getCurrentNavigation().extras.state.usuario;
+          }
+        }
 
   public ngAfterViewInit(): void {
     let animation = this.animationController.create()
@@ -42,10 +50,7 @@ export class HomePage implements OnInit, AfterViewInit {
 
 
 public ngOnInit() {
-  // this.persona.nombre = 'CristiÃ¡n';
-  // this.persona.apellido = 'GÃ³mez';
-  // this.persona.nivelEducacional.id = 6;
-  // this.persona.fechaNacimiento = '1972-12-26';
+
 }
 
 

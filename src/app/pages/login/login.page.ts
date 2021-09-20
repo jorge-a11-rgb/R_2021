@@ -66,7 +66,7 @@ export class LoginPage implements OnInit, AfterViewInit {
 
     const navigationExtras: NavigationExtras = {
       state: {
-        usuario: this.usuario
+        usuario: this.usuario.nombreUsuario
       }
     };
     this.router.navigate(['/home'], navigationExtras);

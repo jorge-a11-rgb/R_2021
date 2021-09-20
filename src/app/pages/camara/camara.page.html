@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      QR Scanner
+      Registro de asistencia por QR
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,10 +11,7 @@
   <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
 
   <!-- Trigger the file input -->
-  <ion-button expand="full" (click)="captureImage()">
-    <ion-icon slot="start" name="camera"></ion-icon>
-    Importar imagen QR
-  </ion-button>
+
 
   <ion-button expand="full" (click)="startScan()">
     <ion-icon slot="start" name="qr-scanner"></ion-icon>
@@ -47,7 +44,7 @@
     </ion-card-content>
   </ion-card>
   <div class="ion-padding-top ion-text-center">
-    <ion-button [routerLink]="['/home']" id="volver">Volver</ion-button>
+    <ion-button [routerLink]="['/home']">Volver</ion-button>
   </div>
 </ion-content>
 <ion-footer>

@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content>
+  <div class="ion-padding-top ion-text-center">
+      <p *ngIf="usuario">Holaa!!: {{ usuario }}</p>
+</div>
   <ion-label class="ion-padding-top ion-text-center">
     <h1>
       Instrucciones para registrar asistencia
@@ -32,7 +35,7 @@
       <img src='assets/icon/2.jpg' style='width: 25% ; border: 2px solid rgb(255, 255, 255)'>
       </div>
       <div class="ion-padding-top ion-text-center">
-        <ion-button [routerLink]="['/login']" id="volver">Volver</ion-button>
+        <ion-button [routerLink]="['/login']">Volver</ion-button>
       </div>
 
 
@@ -43,7 +46,7 @@
 
     <div #titulo2>
       <ion-title class="ion-text-left ion-text">
-        Identificación de asistencia de alumno
+        Identificion clases
       </ion-title>
     </div>
 
