@@ -39,9 +39,8 @@ export class PassPage implements OnInit, AfterViewInit {
     let animation = this.animationController.create()
       .addElement(this.titulo3.nativeElement)
 
-      .duration(1500)
-      .fromTo('transform', 'translate(0px)', 'translate(100px)')
-      .fromTo('opacity', 0.10, 1);
+      .duration(3000)
+     .fromTo('opacity', 0.10, 1);
 
       document.querySelector('#limpiar2').addEventListener('click', () => {
         animation.play();
@@ -58,7 +57,7 @@ export class PassPage implements OnInit, AfterViewInit {
       return;
     }
 
-    this.mostrarMensaje('Usted a sido idenficado con exito');
+    this.mostrarMensaje('Respuesta correcta, continúe.....');
 
 
     const navigationExtras: NavigationExtras = {

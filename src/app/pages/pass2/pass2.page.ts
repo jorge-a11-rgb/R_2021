@@ -34,8 +34,7 @@ export class Pass2Page implements OnInit, AfterViewInit {
     let animation = this.animationController.create()
       .addElement(this.titulo4.nativeElement)
       .addElement(this.titulo5.nativeElement)
-      .duration(1500)
-      .fromTo('transform', 'translate(0px)', 'translate(100px)')
+      .duration(3000)
       .fromTo('opacity', 0.10, 1);
 
       document.querySelector('#limpiar3').addEventListener('click', () => {
@@ -52,7 +51,7 @@ export class Pass2Page implements OnInit, AfterViewInit {
       return;
     }
 
-    this.mostrarMensaje('Contraseña reestablecida');
+    this.mostrarMensaje('Contraseña restablecida');
 
 
     const navigationExtras: NavigationExtras = {
