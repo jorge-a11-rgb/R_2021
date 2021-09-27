@@ -22,6 +22,7 @@ import { Animation, AnimationController } from '@ionic/angular';
 })
 export class PassPage implements OnInit, AfterViewInit {
   @ViewChild('titulo3', { read: ElementRef, static: true}) titulo3: ElementRef;
+  @ViewChild('titulo4', { read: ElementRef, static: true}) titulo4: ElementRef;
 
 
 
@@ -38,6 +39,7 @@ export class PassPage implements OnInit, AfterViewInit {
     // eslint-disable-next-line prefer-const
     let animation = this.animationController.create()
       .addElement(this.titulo3.nativeElement)
+      .addElement(this.titulo4.nativeElement)
 
       .duration(3000)
      .fromTo('opacity', 0.10, 1);
