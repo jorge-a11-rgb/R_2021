@@ -41,7 +41,7 @@ export class DBTaskService {
       rut NUMBER PRIMARY KEY AUTOINCREMENT,
       nombre TEXT NOT NULL,
       apellido_materno TEXT NOT NULL,
-      apellido_paterno INTEGER(1) NOT NULL,
+      apellido_paterno TEXT NOT NULL,
       segundo_apellido_mama TEXT NOT NULL
 
     );`;
